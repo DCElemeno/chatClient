@@ -1,5 +1,5 @@
 //setup app
-var myApp = angular.module('portal',[]);
+var myApp = angular.module('portal',['ngSanitize']);
 
 //main service
 myApp.service('mainService', function($scope) {
@@ -7,7 +7,7 @@ myApp.service('mainService', function($scope) {
 });
 
 //main controller
-myApp.controller('main', function($scope) {    
+myApp.controller('main', function($scope, $sce) {    
 
 	/* CONFIG EXPLANATION
 	   
@@ -30,7 +30,13 @@ myApp.controller('main', function($scope) {
 	*/
 
 	//testing stuff
-	$scope.test = "";
+	$scope.chatLog = "";
+	$scope.inputText = "";
+
+	$scope.sendMessage = function() {
+		$scope.chatLog += '<div class="chat-message">'+$scope.inputText+'</div><br>';
+		$scope.inputText = "";
+	}
 
     //config items are going to be listed in an object here
     $scope.config = {
