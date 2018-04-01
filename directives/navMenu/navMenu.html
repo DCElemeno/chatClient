@@ -1,0 +1,9 @@
+<md-card class="nav-menu">
+	<md-menu-content>
+		<md-menu-item 
+			ng-repeat="option in navOptions"
+			ng-click="nav.goToDest(option.dest)">
+			<md-button>{{option.name}}</md-button>
+		</md-menu-item>
+	</md-menu-content>
+</md-card>

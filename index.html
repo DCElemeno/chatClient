@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Website</title>
+
+	<!-- import stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="required/material.min.css">
+
+	<!--import angular, jquery and material design-->
+	<script src="required/jquery.min.js"></script>
+	<script src="required/angular.min.js"></script>
+	<script src="required/material.min.js"></script>
+
+	<!-- get ng-app and directives-->
+	<script src="app.js"></script> 
+	<script src="directives/navMenu/navMenuDrtv.js"></script>	
+	<script src="directives/pageContainer/pageContainerDrtv.js"></script>	
+	<script src="directives/pageTypes/formPage/formPageDrtv.js"></script>	
+
+</head>
+<body ng-app="portal" ng-controller="main">
+
+	<!-- TODO: add in a login -->
+	<!-- ... -->
+
+	<!-- page container which contains everything-->
+	<div class="page-container">
+
+		<!-- header content (main and sub) -->
+		<md-card class="main-header">
+			Chat Client
+		</md-card>
+
+		<!-- nav container which contains side nav bar-->
+		<div class="nav-container">
+			<!-- <nav-menu nav-options="config.navOptions"></nav-menu> -->
+			<div class="page-content">
+				<page-container></page-container>
+
+
+				
+			</div>
+		</div>
+
+		<!-- chat input -->
+		<md-card class="main-footer">
+		       
+		    <div class="material-form-field chat-input">
+			  	<input type="text" required name="text" id="field-text"/>
+			  	<label class="material-form-field-label" for="field-text">></label>
+			</div>
+		    
+		</md-card>
+	</div>	
+</body>
+</html>
